@@ -17,18 +17,18 @@ const OG_IMAGE =
 
 export const metadata: Metadata = {
   title: "Espaço Criativo",
-  description: "Transformando simples hojas de papel en arte",
+  description: "Trasformiamo semplici fogli di carta in arte",
   openGraph: {
     type: "website",
     title: "Espaço Criativo",
-    description: "Transformando simples hojas de papel en arte",
+    description: "Trasformiamo semplici fogli di carta in arte",
     images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     site: "@Lovable",
     title: "Espaço Criativo",
-    description: "Transformando simples hojas de papel en arte",
+    description: "Trasformiamo semplici fogli di carta in arte",
     images: [OG_IMAGE],
   },
 };
@@ -39,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={inter.variable}>
+    <html lang="it" className={inter.variable}>
       <head>
         {/* Aquece a conexão com o CDN do UTMify (scripts de UTM e pixel) */}
         <link rel="preconnect" href="https://cdn.utmify.com.br" crossOrigin="" />

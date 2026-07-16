@@ -10,7 +10,7 @@ export function TopBanner() {
   // Se calcula en el cliente para evitar divergencia de hidratación.
   useEffect(() => {
     setToday(
-      new Date().toLocaleDateString("es-ES", {
+      new Date().toLocaleDateString("it-IT", {
         day: "numeric",
         month: "long",
         year: "numeric",
@@ -25,10 +25,10 @@ export function TopBanner() {
           <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/15">
             <Clock className="h-3 w-3" />
           </span>
-          <span>Oportunidad Única:</span>
+          <span>Opportunità Unica:</span>
         </div>
         <p className="text-[11px] sm:text-xs font-normal tracking-normal">
-          Promoción válida solo hasta hoy{today && `, ${today}`}
+          Promozione valida solo fino a oggi{today && `, ${today}`}
         </p>
       </div>
     </header>

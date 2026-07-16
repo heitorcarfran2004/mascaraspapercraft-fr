@@ -8,8 +8,8 @@ export function Testimonials() {
       <div className="container-narrow">
         <div className="text-center mb-10">
           <h2 className="text-[30px] md:text-[40px] font-bold leading-[40px] md:leading-[54px]">
-            Quien Compra{" "}
-            <span className="block gradient-text">Aprueba y Recomienda</span>
+            Chi Compra{" "}
+            <span className="block gradient-text">Approva e Consiglia</span>
           </h2>
         </div>
 

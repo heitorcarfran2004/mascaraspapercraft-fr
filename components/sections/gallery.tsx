@@ -7,11 +7,11 @@ export function Gallery() {
       <div className="container-narrow">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-2">
-            Lo Que <span className="gradient-text">Puedes Crear</span>
+            Cosa Puoi <span className="gradient-text">Creare</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Mira algunos ejemplos reales de montajes hechos con nuestras
-            plantillas.
+            Guarda alcuni esempi reali di montaggi realizzati con i nostri
+            modelli.
           </p>
         </div>
 

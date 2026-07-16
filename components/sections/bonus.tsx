@@ -7,9 +7,9 @@ export function Bonus() {
     <section className="section-padding bg-gradient-to-b from-secondary/50 to-background">
       <div className="container-narrow">
         <div className="text-center mb-12">
-          <span className="tag-badge mb-4">🎁 3 Bonos Exclusivos</span>
+          <span className="tag-badge mb-4">🎁 3 Bonus Esclusivi</span>
           <h2 className="text-3xl md:text-4xl font-bold">
-            Llévate Hoy <span className="gradient-text">Gratis</span>
+            Prendi Oggi <span className="gradient-text">Gratis</span>
           </h2>
         </div>
 

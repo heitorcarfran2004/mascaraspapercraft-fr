@@ -66,7 +66,7 @@ export function UpsellModal({ open, onOpenChange }: UpsellModalProps) {
             <div className="flex items-center justify-center gap-1.5 mt-2 text-destructive">
               <Clock className="w-4 h-4" />
               <span className="text-sm font-medium">
-                Expira en {formatTime(timeLeft)}
+                Scade tra {formatTime(timeLeft)}
               </span>
             </div>
           </div>
