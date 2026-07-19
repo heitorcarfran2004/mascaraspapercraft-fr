@@ -8,15 +8,16 @@
 /* Link di checkout e tracciamento                                     */
 /* ------------------------------------------------------------------ */
 
-// TODO (migrazione EU): questi checkout sono dell'offerta brasiliana (BRL).
-// Sostituire con il checkout europeo in EUR prima di pubblicare.
+/** Checkout Hotmart (IT) — i prezzi qui sotto devono corrispondere a ogni offerta. */
 export const checkout = {
-  /** Piano completo "Collezione Master" (CTA principale). */
-  master: "https://ggcheckout.app/checkout/v5/oCtE74KEwFtvHEiWxULY",
-  /** Upsell mostrato quando l'utente sceglie il piano base. */
-  upsell: "https://ggcheckout.app/checkout/v5/fo1NxX1ks8T6qBXtTvHy",
-  /** Piano base (quando l'utente rifiuta l'upsell). */
-  basic: "https://ggcheckout.app/checkout/v5/q2Z6itwEAb0nHVyVlykm",
+  /** Piano completo "Collezione Master" — 13,90 € (CTA principale). */
+  master:
+    "https://pay.hotmart.com/O106798463O?off=192oitym&checkoutMode=10",
+  /** Upsell del modale — 9,90 € (piano completo scontato). */
+  upsell:
+    "https://pay.hotmart.com/O106798463O?off=444hcq8l&checkoutMode=10",
+  /** Piano base — 6,90 €. */
+  basic: "https://pay.hotmart.com/O106798463O?off=017rh4t3&checkoutMode=10",
 } as const;
 
 /** Dove torna il browser premendo "indietro" (back-redirect). */
@@ -320,8 +321,8 @@ export const pricing = {
     name: "Collezione Master",
     badge: "Più popolare",
     originalPrice: "Prima 49,90 €",
-    price: "17,90 €",
-    savings: "Risparmia 32,00 €",
+    price: "13,90 €",
+    savings: "Risparmia 36,00 €",
     features: [
       "Accesso a +500 modelli",
       "Supporto prioritario",
@@ -360,8 +361,8 @@ export const upsell = {
   description:
     "Ti interessava il Piano Base, ma che ne dici di prendere il Piano Completo con più di 500 modelli a un prezzo esclusivo?",
   offerLabel: "OFFERTA LAMPO",
-  originalPrice: "17,90 €",
-  price: "11,90 €",
+  originalPrice: "13,90 €",
+  price: "9,90 €",
   /** Durata del conto alla rovescia, in secondi (1:45). */
   countdownSeconds: 105,
   acceptCta: "Voglio approfittarne ora",
