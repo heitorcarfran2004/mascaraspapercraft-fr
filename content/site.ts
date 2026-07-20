@@ -23,8 +23,8 @@ export const checkout = {
 /** Dove torna il browser premendo "indietro" (back-redirect). */
 export const backRedirectUrl = "https://mascaraspaperback.vercel.app/";
 
-/** Pixel UTMify usato nel tracciamento delle conversioni. */
-export const utmifyPixelId = "69db37c122a31821d842a567";
+/** Pixel UTMify (IT) usato nel tracciamento delle conversioni. */
+export const utmifyPixelId = "6a5d8b514f38a2f389a0d8fb";
 
 /* ------------------------------------------------------------------ */
 /* Dimostrazione video ("Compra senza paura")                          */

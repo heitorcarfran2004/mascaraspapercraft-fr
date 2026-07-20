@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 
-import { backRedirectUrl } from "@/content/site";
+import { backRedirectUrl, utmifyPixelId } from "@/content/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -55,6 +55,18 @@ export default function RootLayout({
           data-utmify-prevent-xcod-sck=""
           data-utmify-prevent-subids=""
         />
+
+        {/* UTMify — pixel de conversão (IT) */}
+        <Script id="utmify-pixel" strategy="afterInteractive">
+          {`
+            window.pixelId = "${utmifyPixelId}";
+            var a = document.createElement("script");
+            a.setAttribute("async", "");
+            a.setAttribute("defer", "");
+            a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+            document.head.appendChild(a);
+          `}
+        </Script>
 
         {/* Back-redirect: ao apertar "voltar", leva para a oferta */}
         <Script id="back-redirect" strategy="afterInteractive">
