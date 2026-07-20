@@ -1,11 +1,12 @@
-"use client";
-
 import Image from "next/image";
 
 /**
  * Carrossel da galeria: marquee contínuo que desliza sozinho para a direita.
  * Mostra ao menos 2 imagens por vez com "peek" da próxima, e pausa ao passar o mouse.
  * A lista é duplicada para o loop ser perfeitamente contínuo (translateX -50% → 0).
+ *
+ * Server Component de propósito: a animação e o hover são puro CSS, então não há
+ * motivo para mandar JavaScript deste componente para o navegador.
  */
 export function GalleryCarousel({ images }: { images: string[] }) {
   const loop = [...images, ...images];

@@ -10,9 +10,17 @@ import {
   User,
 } from "lucide-react";
 
+import dynamic from "next/dynamic";
+
 import { CtaButton } from "@/components/cta-button";
 import { checkout, pricing } from "@/content/site";
-import { UpsellModal } from "./upsell-modal";
+
+// Carregado sob demanda: o modal (e o Radix Dialog) sai do bundle inicial,
+// aliviando o First Load JS. O comportamento do upsell continua idêntico.
+const UpsellModal = dynamic(
+  () => import("./upsell-modal").then((m) => m.UpsellModal),
+  { ssr: false },
+);
 
 const trustIcons = [ShieldCheck, Download, ThumbsUp];
 
