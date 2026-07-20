@@ -73,6 +73,8 @@ export default function RootLayout({
           {`
             (function () {
               var url = "${backRedirectUrl}";
+              // Non armare il redirect sulla pagina di offerta stessa (evita loop).
+              if (location.pathname.indexOf(url) === 0) return;
               var target = url.trim() + (url.indexOf('?') > 0 ? '&' : '?') + document.location.search.replace('?', '');
               history.pushState({}, '', location.href);
               history.pushState({}, '', location.href);

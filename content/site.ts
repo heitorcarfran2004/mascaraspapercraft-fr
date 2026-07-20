@@ -21,7 +21,24 @@ export const checkout = {
 } as const;
 
 /** Dove torna il browser premendo "indietro" (back-redirect). */
-export const backRedirectUrl = "https://mascaraspaperback.vercel.app/";
+export const backRedirectUrl = "/offerta-speciale";
+
+/* ------------------------------------------------------------------ */
+/* Offerta di uscita (pagina di back-redirect)                         */
+/* ------------------------------------------------------------------ */
+
+export const backOffer = {
+  banner: "ATTENZIONE: NON CHIUDERE QUESTA PAGINA O PERDERAI LO SCONTO",
+  badge: "OFFERTA ESCLUSIVA",
+  title: "Aspetta! Non andare via ancora",
+  subtitle:
+    "Prima di uscire, abbiamo sbloccato un'offerta unica sul nostro pacchetto completo con uno sconto esclusivo. Ma solo adesso!",
+  originalPrice: "Da 13,90 €",
+  price: "5,90 €",
+  savings: "Risparmia 8,00 €",
+  /** Checkout dedicato all'offerta di uscita — 5,90 €. */
+  checkout: "https://pay.hotmart.com/O106798463O?off=b7wgfjmw&checkoutMode=10",
+} as const;
 
 /** Pixel UTMify (IT) usato nel tracciamento delle conversioni. */
 export const utmifyPixelId = "6a5d8b514f38a2f389a0d8fb";
