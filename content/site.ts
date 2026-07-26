@@ -1,58 +1,59 @@
 /**
- * Fonte unica di verità del funnel di vendita (versione IT).
- * Modifica testi, prezzi, immagini e link di checkout QUI — i componenti
- * si limitano a consumare questi dati.
+ * Source unique de vérité du tunnel de vente (version FR).
+ * Modifie les textes, prix, images et liens de checkout ICI — les composants
+ * ne font que consommer ces données.
  */
 
 /* ------------------------------------------------------------------ */
-/* Link di checkout e tracciamento                                     */
+/* Liens de checkout et suivi                                          */
 /* ------------------------------------------------------------------ */
 
-/** Checkout Hotmart (IT) — i prezzi qui sotto devono corrispondere a ogni offerta. */
+// TODO (marché FR): remplacer par les checkouts Hotmart français en EUR.
+// Ces liens sont des placeholders — NE PAS diffuser d'annonces avant de les changer.
 export const checkout = {
-  /** Piano completo "Collezione Master" — 13,90 € (CTA principale). */
-  master:
-    "https://pay.hotmart.com/O106798463O?off=192oitym&checkoutMode=10",
-  /** Upsell del modale — 9,90 € (piano completo scontato). */
-  upsell:
-    "https://pay.hotmart.com/O106798463O?off=444hcq8l&checkoutMode=10",
-  /** Piano base — 6,90 €. */
-  basic: "https://pay.hotmart.com/O106798463O?off=017rh4t3&checkoutMode=10",
+  /** Offre complète « Collection Maîtresse » — 13,90 € (CTA principal). */
+  master: "https://ggcheckout.app/checkout/v5/oCtE74KEwFtvHEiWxULY",
+  /** Upsell de la modale — 9,90 € (offre complète remisée). */
+  upsell: "https://ggcheckout.app/checkout/v5/fo1NxX1ks8T6qBXtTvHy",
+  /** Offre de base — 6,90 €. */
+  basic: "https://ggcheckout.app/checkout/v5/q2Z6itwEAb0nHVyVlykm",
 } as const;
 
-/** Dove torna il browser premendo "indietro" (back-redirect). */
-export const backRedirectUrl = "/offerta-speciale";
+/** Où le navigateur revient au clic sur « précédent » (back-redirect). */
+export const backRedirectUrl = "/offre-speciale";
+
+// TODO (marché FR): renseigner l'ID du pixel UTMify français (non câblé pour l'instant).
+/** Pixel UTMify pour le suivi des conversions. */
+export const utmifyPixelId = "";
 
 /* ------------------------------------------------------------------ */
-/* Offerta di uscita (pagina di back-redirect)                         */
+/* Offre de sortie (page de back-redirect)                             */
 /* ------------------------------------------------------------------ */
 
 export const backOffer = {
-  banner: "ATTENZIONE: NON CHIUDERE QUESTA PAGINA O PERDERAI LO SCONTO",
-  badge: "OFFERTA ESCLUSIVA",
-  title: "Aspetta! Non andare via ancora",
+  banner: "ATTENTION : NE FERMEZ PAS CETTE PAGE OU VOUS PERDREZ LA REMISE",
+  badge: "OFFRE EXCLUSIVE",
+  title: "Attendez ! Ne partez pas tout de suite",
   subtitle:
-    "Prima di uscire, abbiamo sbloccato un'offerta unica sul nostro pacchetto completo con uno sconto esclusivo. Ma solo adesso!",
-  originalPrice: "Da 13,90 €",
+    "Avant de partir, nous avons débloqué une offre unique sur notre pack complet avec une remise exclusive. Mais c'est maintenant ou jamais !",
+  originalPrice: "Au lieu de 13,90 €",
   price: "5,90 €",
-  savings: "Risparmia 8,00 €",
-  /** Checkout dedicato all'offerta di uscita — 5,90 €. */
-  checkout: "https://pay.hotmart.com/O106798463O?off=b7wgfjmw&checkoutMode=10",
+  savings: "Économisez 8,00 €",
+  // TODO (marché FR): checkout dédié à l'offre de sortie (placeholder).
+  checkout: "https://ggcheckout.app/checkout/v5/oCtE74KEwFtvHEiWxULY",
 } as const;
 
-/** Pixel UTMify (IT) usato nel tracciamento delle conversioni. */
-export const utmifyPixelId = "6a5d8b514f38a2f389a0d8fb";
-
 /* ------------------------------------------------------------------ */
-/* Dimostrazione video ("Compra senza paura")                          */
+/* Démonstration vidéo ("Achetez sans crainte") — section désactivée   */
+/* (la vidéo est en portugais ; à réactiver avec une VSL française)    */
 /* ------------------------------------------------------------------ */
 
 export const productDemo = {
-  eyebrow: "GUARDA IN PRATICA",
-  titleLead: "Compra",
-  titleHighlight: "Senza Paura",
+  eyebrow: "À VOIR EN PRATIQUE",
+  titleLead: "Achetez",
+  titleHighlight: "Sans Crainte",
   subtitle:
-    "Premi play e guarda il prodotto da dentro: come lo ricevi, come vi accedi e la qualità dei modelli.",
+    "Appuyez sur play et découvrez le produit de l'intérieur : comment vous le recevez, comment y accéder et la qualité des modèles.",
   video: {
     playerId: "vid-6a4d0c6f38fbf93867be47df",
     script:
@@ -61,28 +62,28 @@ export const productDemo = {
 } as const;
 
 /* ------------------------------------------------------------------ */
-/* Intestazione / Hero                                                 */
+/* En-tête / Hero                                                      */
 /* ------------------------------------------------------------------ */
 
 export const hero = {
   badgeCount: "+500",
-  badgeLabel: "MODELLI APPROVATI",
-  titleLead: "Trasforma la carta in",
-  titleHighlight: "Maschere 3D",
-  titleTail: "incredibili",
+  badgeLabel: "MODÈLES APPROUVÉS",
+  titleLead: "Transformez le papier en",
+  titleHighlight: "Masques 3D",
+  titleTail: "incroyables",
   subtitle:
-    "Ottieni più di 500 modelli pronti da scaricare, stampare e montare per creare maschere spettacolari a casa",
-  cta: "VOGLIO INIZIARE ORA",
+    "Obtenez plus de 500 modèles prêts à télécharger, imprimer et assembler pour créer des masques impressionnants à la maison",
+  cta: "JE COMMENCE MAINTENANT",
   image: {
     src: "/images/hero.jpeg",
-    alt: "Maschere 3D di carta",
+    alt: "Masques 3D en papier",
     width: 1024,
     height: 1024,
   },
 } as const;
 
 /* ------------------------------------------------------------------ */
-/* Vantaggi                                                            */
+/* Avantages                                                           */
 /* ------------------------------------------------------------------ */
 
 export interface Benefit {
@@ -94,32 +95,32 @@ export interface Benefit {
 export const benefits: Benefit[] = [
   {
     image: "/images/beneficios/beneficio1.jpg",
-    title: "Costumi incredibili spendendo poco",
+    title: "Des déguisements incroyables pour pas cher",
     description:
-      "Crea costumi da togliere il fiato per feste in maschera o compleanni a tema",
+      "Réalisez des déguisements à couper le souffle pour les soirées costumées ou les anniversaires à thème",
   },
   {
     image: "/images/beneficios/beneficio2.jpg",
-    title: "Perfetto per eventi, foto e decorazione",
+    title: "Parfait pour les événements, photos et déco",
     description:
-      "Crea maschere uniche che attirano l'attenzione a feste, compleanni, servizi fotografici e persino nella decorazione di casa",
+      "Créez des masques uniques qui attirent tous les regards lors des fêtes, anniversaires, séances photo et même dans la déco de la maison",
   },
   {
     image: "/images/beneficios/beneficio3.jpg",
-    title: "Terapia antistress",
+    title: "Thérapie anti-stress",
     description:
-      "Stacca dagli schermi e concentrati sul momento presente. Ritagliare e montare la carta è un modo semplice ed efficace per rilassare la mente.",
+      "Déconnectez-vous des écrans et concentrez-vous sur l'instant présent. Découper et assembler du papier est un moyen simple et efficace de détendre l'esprit.",
   },
   {
     image: "/images/beneficios/beneficio4.jpg",
-    title: "L'attività perfetta in famiglia",
+    title: "L'activité parfaite en famille",
     description:
-      "Un'attività creativa da fare con figli, nipoti o nipotini. Meno schermo, più chiacchiere, più ricordi creati insieme.",
+      "Une activité créative à faire avec ses enfants, neveux ou petits-enfants. Moins d'écran, plus de discussions, plus de souvenirs créés ensemble.",
   },
 ];
 
 /* ------------------------------------------------------------------ */
-/* Galleria                                                            */
+/* Galerie                                                             */
 /* ------------------------------------------------------------------ */
 
 export interface GalleryCategory {
@@ -130,8 +131,8 @@ export interface GalleryCategory {
 
 export const galleryCategories: GalleryCategory[] = [
   {
-    title: "Animali",
-    subtitle: "Dal più tenero al più selvaggio",
+    title: "Animaux",
+    subtitle: "Du plus mignon au plus sauvage",
     images: [
       "/images/galeria/animais/carrossel-animal1.jpeg",
       "/images/galeria/animais/carrossel-animal2.jpeg",
@@ -146,8 +147,8 @@ export const galleryCategories: GalleryCategory[] = [
     ],
   },
   {
-    title: "Cartoni & Nostalgia",
-    subtitle: "Personaggi che hanno segnato generazioni",
+    title: "Dessins & Nostalgie",
+    subtitle: "Des personnages qui ont marqué des générations",
     images: [
       "/images/galeria/desenhos-nostalgia/carrossel-desenhos.jpeg",
       "/images/galeria/desenhos-nostalgia/carrossel-desenhos1.jpeg",
@@ -164,8 +165,8 @@ export const galleryCategories: GalleryCategory[] = [
     ],
   },
   {
-    title: "Universo dei Supereroi",
-    subtitle: "I difensori più amati dello schermo",
+    title: "Univers des Héros",
+    subtitle: "Les défenseurs les plus aimés du grand écran",
     images: [
       "/images/galeria/herois/carrossel-heroi1.jpeg",
       "/images/galeria/herois/carrossel-heroi2.jpeg",
@@ -180,8 +181,8 @@ export const galleryCategories: GalleryCategory[] = [
     ],
   },
   {
-    title: "Cattivi & Horror",
-    subtitle: "Dai cattivi più temuti ai mostri più grandi",
+    title: "Méchants & Horreur",
+    subtitle: "Des méchants les plus redoutés aux plus grands monstres",
     images: [
       "/images/galeria/viloes-terror/carrossel-vilao1.jpeg",
       "/images/galeria/viloes-terror/carrossel-vilao2.jpeg",
@@ -195,8 +196,8 @@ export const galleryCategories: GalleryCategory[] = [
     ],
   },
   {
-    title: "Mondo Gamer",
-    subtitle: "Dalle sale giochi a Fortnite, per chi ama giocare",
+    title: "Univers du Gaming",
+    subtitle: "De la salle d'arcade à Fortnite, pour les passionnés de jeux",
     images: [
       "/images/galeria/mundo-gamer/carrossel-gamer1.jpeg",
       "/images/galeria/mundo-gamer/carrossel-gamer2.jpeg",
@@ -213,7 +214,7 @@ export const galleryCategories: GalleryCategory[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/* Materiale necessario                                                */
+/* Matériel nécessaire                                                 */
 /* ------------------------------------------------------------------ */
 
 import {
@@ -232,32 +233,32 @@ export interface EquipmentItem {
 export const equipment: EquipmentItem[] = [
   {
     icon: Printer,
-    title: "1. Stampante comune",
+    title: "1. Une imprimante classique",
     description:
-      "Funziona con qualsiasi stampante domestica A4 (a getto d'inchiostro o laser).",
+      "Fonctionne avec n'importe quelle imprimante domestique A4 (jet d'encre ou laser).",
   },
   {
     icon: FileText,
-    title: "2. Carta economica",
+    title: "2. Du papier abordable",
     description:
-      "Usa carta normale da 75g per fare pratica o carta da 180g (la trovi in qualsiasi cartoleria) per più resistenza.",
+      "Utilisez du papier 80g pour vous entraîner ou du papier 180g (en vente dans toute papeterie) pour plus de solidité.",
   },
   {
     icon: Scissors,
-    title: "3. Colla e forbici",
+    title: "3. De la colle et des ciseaux",
     description:
-      "Colla vinilica, forbici a punta arrotondata e righello. Materiali semplici che hai già in casa.",
+      "Colle blanche, ciseaux à bouts ronds et règle. Des fournitures simples que vous avez déjà chez vous.",
   },
 ];
 
 /* ------------------------------------------------------------------ */
-/* Testimonianze                                                       */
+/* Témoignages                                                         */
 /* ------------------------------------------------------------------ */
 
 /**
- * PROVVISORIO: traduzione delle testimonianze reali dell'offerta brasiliana.
- * Sostituire con testimonianze reali del mercato europeo prima di pubblicare
- * (nell'UE le recensioni devono essere verificabili — Direttiva 2019/2161).
+ * PROVISOIRE : traduction des témoignages réels de l'offre brésilienne.
+ * À remplacer par de vrais témoignages du marché français avant publication
+ * (dans l'UE, les avis doivent être vérifiables — Directive 2019/2161).
  */
 export interface Testimonial {
   quote: string;
@@ -268,21 +269,21 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "I miei figli le hanno adorate e ora ogni giorno vogliono una maschera nuova 🤣",
+      "Mes enfants les ont adorés et maintenant ils veulent un nouveau masque tous les jours 🤣",
     author: "Aline Freire",
-    role: "Mamma di 2",
+    role: "Maman de 2 enfants",
   },
   {
     quote:
-      "Le ho usate con la mia classe di 4ª e sono piaciute tantissimo. La cosa migliore è che i modelli sono piaciuti sia alle bambine che ai bambini.",
+      "Je les ai utilisés avec ma classe de CM1 et ils ont adoré. Le mieux, c'est que les modèles ont plu autant aux filles qu'aux garçons.",
     author: "Clara Mendes",
-    role: "Insegnante",
+    role: "Enseignante",
   },
   {
     quote:
-      "Le ho comprate per i miei cosplay e le maschere sono venute perfette. L'assistenza mi ha aiutato molto con una maschera personalizzata che ho richiesto 👍",
+      "Je les ai achetés pour mes cosplays et les masques sont parfaits. Le support m'a beaucoup aidé pour un masque personnalisé que j'avais demandé 👍",
     author: "Ricardo Gomes",
-    role: "Cosplayer",
+    role: "Cosplayeur",
   },
 ];
 
@@ -300,69 +301,69 @@ export interface Bonus {
 export const bonuses: Bonus[] = [
   {
     image: "/images/bonus/bonus1.png",
-    title: "BONUS 1: Modelli di Monumenti",
+    title: "BONUS 1 : Modèles de Monuments",
     subtitle:
-      "+50 modelli di monumenti storici come la Torre Eiffel, la Grande Muraglia, ecc.",
+      "+50 modèles de monuments historiques comme la Tour Eiffel, la Grande Muraille, etc.",
     originalPrice: "19,90 €",
   },
   {
     image: "/images/bonus/bonus2.png",
-    title: "BONUS 2: Modelli di Animali 3D",
-    subtitle: "+250 modelli con animali selvatici e domestici da montare.",
+    title: "BONUS 2 : Modèles d'Animaux 3D",
+    subtitle: "+250 modèles d'animaux sauvages et domestiques à assembler.",
     originalPrice: "14,90 €",
   },
   {
     image: "/images/bonus/bonus3.png",
-    title: "BONUS 3: Anime e Manga 3D",
-    subtitle: "+200 modelli di personaggi iconici di anime famosi",
+    title: "BONUS 3 : Animés et Mangas 3D",
+    subtitle: "+200 modèles de personnages emblématiques d'animés célèbres",
     originalPrice: "16,90 €",
   },
 ];
 
 /* ------------------------------------------------------------------ */
-/* Prezzi / Kit                                                        */
+/* Prix / Packs                                                        */
 /* ------------------------------------------------------------------ */
 
 export const pricing = {
   basic: {
-    name: "Kit Iniziale",
-    tagline: "VOGLIO SOLO L'ESSENZIALE",
+    name: "Pack Débutant",
+    tagline: "JE VEUX JUSTE L'ESSENTIEL",
     price: "6,90 €",
     features: [
-      "Accesso a 100 modelli di maschere",
-      "Accesso a vita e download illimitati",
+      "Accès à 100 modèles de masques",
+      "Accès à vie et téléchargements illimités",
     ],
-    cta: "Voglio solo l'essenziale",
+    cta: "Je veux juste l'essentiel",
   },
   master: {
-    name: "Collezione Master",
-    badge: "Più popolare",
-    originalPrice: "Prima 49,90 €",
+    name: "Collection Maîtresse",
+    badge: "Le plus populaire",
+    originalPrice: "Au lieu de 49,90 €",
     price: "13,90 €",
-    savings: "Risparmia 36,00 €",
+    savings: "Économisez 36,00 €",
     features: [
-      "Accesso a +500 modelli",
-      "Supporto prioritario",
-      "Accesso a vita e download illimitati",
-      "Consegna immediata via email e WhatsApp",
+      "Accès à +500 modèles",
+      "Support prioritaire",
+      "Accès à vie et téléchargements illimités",
+      "Livraison immédiate par email et WhatsApp",
     ],
     bonuses: [
-      "BONUS 1: Modelli di Monumenti",
-      "BONUS 2: Modelli di Animali 3D",
-      "BONUS 3: Anime e Manga 3D",
+      "BONUS 1 : Modèles de Monuments",
+      "BONUS 2 : Modèles d'Animaux 3D",
+      "BONUS 3 : Animés et Mangas 3D",
     ],
-    cta: "SÌ! LI VOGLIO TUTTI",
-    socialProof: "648 persone lo hanno già acquistato",
+    cta: "OUI ! JE VEUX TOUT",
+    socialProof: "648 personnes l'ont déjà acheté",
   },
   trustBadges: [
-    "Acquisto 100% sicuro",
-    "Download immediato",
-    "Garanzia di soddisfazione",
+    "Achat 100 % sécurisé",
+    "Téléchargement immédiat",
+    "Satisfait ou remboursé",
   ],
   guarantee: {
-    kicker: "RISCHIO ZERO",
-    title: "Garanzia di 7 giorni",
-    text: "Siamo così sicuri che adorerai i modelli che ti offriamo una garanzia incondizionata. Se non riesci a montarli, non ti piacciono i modelli o semplicemente cambi idea, ti restituiamo il 100% dei tuoi soldi. Senza domande, senza clausole nascoste. Basta una email.",
+    kicker: "ZÉRO RISQUE",
+    title: "Garantie de 7 jours",
+    text: "Nous sommes tellement sûrs que vous allez adorer les modèles que nous vous offrons une garantie inconditionnelle. Si vous n'arrivez pas à les assembler, que les modèles ne vous plaisent pas ou que vous changez simplement d'avis, nous vous remboursons 100 % de votre argent. Sans questions, sans petites lignes. Un simple email suffit.",
   },
 } as const;
 
@@ -371,19 +372,19 @@ export const pricing = {
 /* ------------------------------------------------------------------ */
 
 export const upsell = {
-  header: "ASPETTA! NON ANDARE VIA ANCORA",
-  titleLead: "Abbiamo sbloccato uno",
-  titleHighlight: "Sconto Segreto",
-  titleTail: "per te",
+  header: "ATTENDEZ ! NE PARTEZ PAS ENCORE",
+  titleLead: "Nous avons débloqué une",
+  titleHighlight: "Remise Secrète",
+  titleTail: "pour vous",
   description:
-    "Ti interessava il Piano Base, ma che ne dici di prendere il Piano Completo con più di 500 modelli a un prezzo esclusivo?",
-  offerLabel: "OFFERTA LAMPO",
+    "Le Pack de base vous a intéressé, mais pourquoi ne pas prendre le Pack Complet avec plus de 500 modèles à un prix exclusif ?",
+  offerLabel: "OFFRE ÉCLAIR",
   originalPrice: "13,90 €",
   price: "9,90 €",
-  /** Durata del conto alla rovescia, in secondi (1:45). */
+  /** Durée du compte à rebours, en secondes (1:45). */
   countdownSeconds: 105,
-  acceptCta: "Voglio approfittarne ora",
-  declineCta: "Continua con il Piano Base",
+  acceptCta: "J'en profite maintenant",
+  declineCta: "Continuer avec le Pack de base",
 } as const;
 
 /* ------------------------------------------------------------------ */
@@ -397,66 +398,67 @@ export interface Faq {
 
 export const faqs: Faq[] = [
   {
-    question: "Come riceverò i modelli dopo l'acquisto?",
+    question: "Comment vais-je recevoir les modèles après l'achat ?",
     answer:
-      "Appena il pagamento viene approvato, ricevi subito l'accesso per scaricare i file. I modelli vengono inviati via WhatsApp e anche via email.",
+      "Dès que le paiement est validé, vous recevez immédiatement l'accès pour télécharger les fichiers. Les modèles sont envoyés par WhatsApp et aussi par email.",
   },
   {
-    question: "Posso stamparli tutte le volte che voglio?",
+    question: "Puis-je les imprimer autant de fois que je veux ?",
     answer:
-      "Sì! Dopo l'acquisto puoi stampare i modelli tutte le volte che vuoi.",
+      "Oui ! Après l'achat, vous pouvez imprimer les modèles autant de fois que vous le souhaitez.",
   },
   {
-    question: "È difficile montare le maschere?",
+    question: "Est-ce difficile d'assembler les masques ?",
     answer:
-      "No. Basta ritagliare, piegare e incollare. Con il primo modello prendi subito la mano.",
+      "Non. Il suffit de découper, plier et coller. Dès le premier modèle, vous prenez le coup de main.",
   },
   {
-    question: "Che carta devo usare? Posso usare carta normale?",
+    question: "Quel papier dois-je utiliser ? Le papier d'imprimante ordinaire convient-il ?",
     answer:
-      'Sì! La carta normale funziona molto bene e si monta senza problemi. Tuttavia, se vuoi un risultato più resistente e con una finitura più "premium", l\'ideale è usare carta più spessa, da 180g a 230g.',
+      "Oui ! Le papier d'imprimante ordinaire fonctionne très bien et s'assemble sans problème. Cependant, si vous voulez un résultat plus solide et une finition plus « premium », l'idéal est d'utiliser un papier plus épais, de 180g à 230g.",
   },
   {
-    question: "Quale colla è migliore per montare?",
+    question: "Quelle colle est la meilleure pour l'assemblage ?",
     answer:
-      "La colla vinilica funziona perfettamente. Anche la colla stick aiuta con i pezzi più piccoli.",
+      "La colle blanche fonctionne parfaitement. Le bâton de colle aide aussi pour les petites pièces.",
   },
   {
-    question: "I modelli sono già colorati o devo dipingerli?",
+    question: "Les modèles sont-ils en couleur ou dois-je les peindre ?",
     answer:
-      "La maggior parte arriva già colorata e pronta. Alcuni modelli si possono personalizzare se vuoi dipingerli.",
+      "La plupart sont déjà en couleur et prêts à l'emploi. Certains modèles peuvent être personnalisés si vous voulez les peindre.",
   },
   {
-    question: "Serve una stampante in casa? Funziona con una stampante normale?",
+    question: "Faut-il une imprimante à la maison ? Une imprimante classique suffit-elle ?",
     answer:
-      "Non serve avere una stampante in casa. Puoi stampare in qualsiasi copisteria della tua città. E se hai una stampante, funziona perfettamente con qualsiasi stampante domestica A4.",
+      "Pas besoin d'imprimante à la maison. Vous pouvez imprimer dans n'importe quelle imprimerie ou reprographie de votre ville. Et si vous avez une imprimante, elle fonctionne parfaitement avec n'importe quelle imprimante domestique A4.",
   },
   {
-    question: "C'è un tutorial per montarle?",
+    question: "Y a-t-il un tutoriel pour l'assemblage ?",
     answer:
-      "Sì. Il montaggio è semplice e alcuni modelli includono istruzioni passo passo.",
+      "Oui. L'assemblage est simple et certains modèles incluent des instructions pas à pas.",
   },
   {
-    question: "L'accesso scade?",
-    answer: "No. L'accesso è a vita.",
+    question: "L'accès expire-t-il ?",
+    answer: "Non. L'accès est à vie.",
   },
   {
-    question: "Se perdo i file, posso scaricarli di nuovo?",
-    answer: "Sì. Puoi accedere di nuovo e scaricarli quando vuoi.",
-  },
-  {
-    question: "C'è una garanzia?",
+    question: "Si je perds les fichiers, puis-je les retélécharger ?",
     answer:
-      "Sì. Hai 7 giorni di garanzia per chiedere il rimborso se non ti piace.",
+      "Oui. Vous pouvez y accéder de nouveau et les retélécharger quand vous voulez.",
   },
   {
-    question: "Come funziona il rimborso?",
+    question: "Y a-t-il une garantie ?",
     answer:
-      "Ti basta richiederlo entro 7 giorni e ricevi indietro i tuoi soldi.",
+      "Oui. Vous avez 7 jours de garantie pour demander un remboursement si cela ne vous plaît pas.",
   },
   {
-    question: "Il pagamento è sicuro?",
+    question: "Comment fonctionne le remboursement ?",
     answer:
-      "Sì. Il pagamento avviene tramite una piattaforma sicura con carta e altri metodi.",
+      "Il suffit d'en faire la demande dans un délai de 7 jours et vous êtes remboursé.",
+  },
+  {
+    question: "Le paiement est-il sécurisé ?",
+    answer:
+      "Oui. Le paiement s'effectue via une plateforme sécurisée par carte et autres moyens.",
   },
 ];

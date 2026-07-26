@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 
-import { backRedirectUrl, utmifyPixelId } from "@/content/site";
+import { backRedirectUrl } from "@/content/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -17,18 +17,18 @@ const OG_IMAGE =
 
 export const metadata: Metadata = {
   title: "Espaço Criativo",
-  description: "Trasformiamo semplici fogli di carta in arte",
+  description: "Transformez de simples feuilles de papier en art",
   openGraph: {
     type: "website",
     title: "Espaço Criativo",
-    description: "Trasformiamo semplici fogli di carta in arte",
+    description: "Transformez de simples feuilles de papier en art",
     images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     site: "@Lovable",
     title: "Espaço Criativo",
-    description: "Trasformiamo semplici fogli di carta in arte",
+    description: "Transformez de simples feuilles de papier en art",
     images: [OG_IMAGE],
   },
 };
@@ -39,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="it" className={inter.variable}>
+    <html lang="fr" className={inter.variable}>
       <head>
         {/* Aquece a conexão com o CDN do UTMify (scripts de UTM e pixel) */}
         <link rel="preconnect" href="https://cdn.utmify.com.br" crossOrigin="" />
@@ -56,17 +56,7 @@ export default function RootLayout({
           data-utmify-prevent-subids=""
         />
 
-        {/* UTMify — pixel de conversão (IT) */}
-        <Script id="utmify-pixel" strategy="afterInteractive">
-          {`
-            window.pixelId = "${utmifyPixelId}";
-            var a = document.createElement("script");
-            a.setAttribute("async", "");
-            a.setAttribute("defer", "");
-            a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-            document.head.appendChild(a);
-          `}
-        </Script>
+        {/* TODO (FR): pixel de conversão do UTMify — aguardando o pixelId francês */}
 
         {/* Back-redirect: ao apertar "voltar", leva para a oferta */}
         <Script id="back-redirect" strategy="afterInteractive">

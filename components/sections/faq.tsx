@@ -16,7 +16,7 @@ export function Faq() {
       <div className="container-narrow max-w-3xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">
-            <span className="gradient-text">Domande Frequenti</span>
+            <span className="gradient-text">Questions Fréquentes</span>
           </h2>
         </div>
 
@@ -38,7 +38,7 @@ export function Faq() {
         </Accordion>
 
         <div className="text-center mt-12">
-          <CtaButton onClick={scrollToPricing}>VOGLIO INIZIARE ORA</CtaButton>
+          <CtaButton onClick={scrollToPricing}>JE COMMENCE MAINTENANT</CtaButton>
         </div>
       </div>
     </section>

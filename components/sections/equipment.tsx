@@ -9,10 +9,10 @@ export function Equipment() {
         <div className="text-center mb-8">
           <span className="inline-flex items-center gap-2 bg-primary/15 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
             <Ban className="w-4 h-4 text-primary" />
-            Senza Materiali Costosi
+            Sans Matériel Coûteux
           </span>
           <h2 className="text-[1.876rem] md:text-[2.376rem] font-extrabold leading-snug">
-            Dal cellulare <span className="gradient-text">alle tue mani</span>
+            Du portable <span className="gradient-text">à vos mains</span>
           </h2>
         </div>
 
