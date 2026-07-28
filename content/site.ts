@@ -8,15 +8,14 @@
 /* Liens de checkout et suivi                                          */
 /* ------------------------------------------------------------------ */
 
-// TODO (marché FR): remplacer par les checkouts Hotmart français en EUR.
-// Ces liens sont des placeholders — NE PAS diffuser d'annonces avant de les changer.
+/** Checkouts Hotmart (FR) — les prix ci-dessous doivent correspondre à chaque offre. */
 export const checkout = {
   /** Offre complète « Collection Maîtresse » — 13,90 € (CTA principal). */
-  master: "https://ggcheckout.app/checkout/v5/oCtE74KEwFtvHEiWxULY",
+  master: "https://pay.hotmart.com/X106904054O?off=b0mbnqtj&checkoutMode=10",
   /** Upsell de la modale — 9,90 € (offre complète remisée). */
-  upsell: "https://ggcheckout.app/checkout/v5/fo1NxX1ks8T6qBXtTvHy",
+  upsell: "https://pay.hotmart.com/X106904054O?off=4dk2yyqg&checkoutMode=10",
   /** Offre de base — 6,90 €. */
-  basic: "https://ggcheckout.app/checkout/v5/q2Z6itwEAb0nHVyVlykm",
+  basic: "https://pay.hotmart.com/X106904054O?off=ndbm34p6&checkoutMode=10",
 } as const;
 
 /** Où le navigateur revient au clic sur « précédent » (back-redirect). */
@@ -39,8 +38,8 @@ export const backOffer = {
   originalPrice: "Au lieu de 13,90 €",
   price: "5,90 €",
   savings: "Économisez 8,00 €",
-  // TODO (marché FR): checkout dédié à l'offre de sortie (placeholder).
-  checkout: "https://ggcheckout.app/checkout/v5/oCtE74KEwFtvHEiWxULY",
+  /** Checkout dédié à l'offre de sortie — 5,90 €. */
+  checkout: "https://pay.hotmart.com/X106904054O?off=n1ljpo1j&checkoutMode=10",
 } as const;
 
 /* ------------------------------------------------------------------ */
