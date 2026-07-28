@@ -25,6 +25,9 @@ export const backRedirectUrl = "/offre-speciale";
 /** Pixel UTMify pour le suivi des conversions. */
 export const utmifyPixelId = "";
 
+/** Pixel Meta (Facebook) pour le suivi des conversions (FR). */
+export const metaPixelId = "1683022126318008";
+
 /* ------------------------------------------------------------------ */
 /* Offre de sortie (page de back-redirect)                             */
 /* ------------------------------------------------------------------ */

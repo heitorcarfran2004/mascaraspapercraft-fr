@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 
-import { backRedirectUrl } from "@/content/site";
+import { backRedirectUrl, metaPixelId } from "@/content/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -44,6 +44,13 @@ export default function RootLayout({
         {/* Aquece a conexão com o CDN do UTMify (scripts de UTM e pixel) */}
         <link rel="preconnect" href="https://cdn.utmify.com.br" crossOrigin="" />
         <link rel="dns-prefetch" href="https://cdn.utmify.com.br" />
+        {/* Aquece a conexão com o CDN do Meta Pixel */}
+        <link
+          rel="preconnect"
+          href="https://connect.facebook.net"
+          crossOrigin=""
+        />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
       </head>
       <body>
         {children}
@@ -56,7 +63,30 @@ export default function RootLayout({
           data-utmify-prevent-subids=""
         />
 
-        {/* TODO (FR): pixel de conversão do UTMify — aguardando o pixelId francês */}
+        {/* Meta Pixel (Facebook) — rastreamento de conversão (FR) */}
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '${metaPixelId}');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src={`https://www.facebook.com/tr?id=${metaPixelId}&ev=PageView&noscript=1`}
+            alt=""
+          />
+        </noscript>
 
         {/* Back-redirect: ao apertar "voltar", leva para a oferta */}
         <Script id="back-redirect" strategy="afterInteractive">
